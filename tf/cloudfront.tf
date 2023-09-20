@@ -16,13 +16,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     target_origin_id = aws_s3_bucket.bucket-1.id
 
     viewer_protocol_policy = "allow-all"
-    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
 
-    cached_methods  = ["GET", "HEAD"]
-    compress               = true
-    default_ttl            = 3600
-    min_ttl                = 0
-    max_ttl                = 86400
+    cached_methods = ["GET", "HEAD"]
+    compress       = true
+    default_ttl    = 3600
+    min_ttl        = 0
+    max_ttl        = 86400
 
     forwarded_values {
       query_string = false
@@ -44,5 +44,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   aliases = [var.domain_name]
+
+  depends_on = [aws_s3_bucket.bucket-1, data.aws_s3_bucket.selected-bucket]
 }
 
