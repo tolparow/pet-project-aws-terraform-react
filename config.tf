@@ -1,0 +1,3 @@
+module "front" {
+    source = "./tf"
+}
