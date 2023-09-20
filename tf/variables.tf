@@ -13,10 +13,8 @@ variable "region" {
   default = "us-east-1"
 }
 variable "access_key" {
-  type    = string
-  default = "access"
+  type = string
 }
 variable "secret_key" {
-  type    = string
-  default = "secret"
+  type = string
 }
