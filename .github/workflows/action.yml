@@ -43,6 +43,6 @@ jobs:
       with:
         args: --acl public-read --follow-symlinks --delete
       env:
-        AWS_S3_BUCKET: ${{ variables.TF_VAR_BUCKET_NAME }}
+        AWS_S3_BUCKET: ${{ vars.TF_VAR_BUCKET_NAME }}
         AWS_ACCESS_KEY_ID: ${{ secrets.TF_VAR_ACCESS_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_VAR_SECRET_KEY }}
