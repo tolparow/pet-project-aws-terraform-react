@@ -18,3 +18,6 @@ variable "access_key" {
 variable "secret_key" {
   type = string
 }
+variable "cert_arn" {
+  type = string
+}
