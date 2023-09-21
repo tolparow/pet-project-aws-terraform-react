@@ -48,6 +48,7 @@ jobs:
         with:
           name: build
           path: ./build
+      - run: ls /home/runner/work/aws-test-project-front/aws-test-project-front/build
       - uses: actions/checkout@v4
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
@@ -57,4 +58,4 @@ jobs:
           AWS_S3_BUCKET: "www.${{  vars.TF_VAR_BUCKET_NAME }}"
           AWS_ACCESS_KEY_ID: ${{ secrets.TF_VAR_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.TF_VAR_SECRET_KEY }}
-          SOURCE_DIR: "./build"
+          SOURCE_DIR: "/home/runner/work/aws-test-project-front/aws-test-project-front/build"
