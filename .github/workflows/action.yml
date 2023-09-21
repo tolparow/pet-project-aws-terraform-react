@@ -9,6 +9,10 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_CERT_ARN: ${{ secrets.TF_VAR_CERT_ARN }}
+      TF_VAR_ACCESS_KEY: ${{ secrets.TF_VAR_ACCESS_KEY }}
+      TF_VAR_SECRET_KEY: ${{ secrets.TF_VAR_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup Terraform
